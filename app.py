@@ -84,11 +84,12 @@ elif choice == 'Visualize Data':
 
 elif choice == 'Column Analysis':
     columns = df.columns.tolist()
+    columns.remove('Name')
     scol = st.sidebar.selectbox("Select a Column",columns)
     if df[scol].dtype == 'object':
         vc = df[scol].value_counts()
         most_common = vc.idxmax()
-        c1 , c2 = st.columns([3,1])
+        c1 , c2 = st.columns([3,2])
         #visualize
 
         fig = px.funnel_area(names=vc.index,values=vc.values)
