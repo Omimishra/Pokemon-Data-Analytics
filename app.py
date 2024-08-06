@@ -25,6 +25,7 @@ st.subheader('A simple data app to analyze Pokemon data')
 st.sidebar.title('Menu')
 choice = st.sidebar.radio('Options',['View Data','Visualize Data','Column Analysis'])
 
+
 if choice == 'View Data':
     st.header("View Dataset")
     st.dataframe(df)
